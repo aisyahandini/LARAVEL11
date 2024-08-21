@@ -19,3 +19,9 @@ use App\Http\Controllers\AuthController;
 Route::get('/',[homeController::class,"home"]);
 Route::get('/register',[authController::class,"register"]);
 Route::get('/welcome',[authController::class,"welcome"]);
+Route::get('/datatabel', function(){
+    return view('datatabel');
+});
+Route::get('/table', function(){
+    return view('table');
+});
