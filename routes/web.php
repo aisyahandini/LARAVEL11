@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\castcontroller;
 
 
 /*
@@ -25,3 +26,14 @@ Route::get('/datatabel', function(){
 Route::get('/table', function(){
     return view('table');
 });
+route::get('/data-table',function(){
+    return view('data-table');
+});
+
+     Route::get('/cast', [castcontroller::class, 'index']);
+     Route::get('/cast/create', [castcontroller::class, 'create']);
+     Route::post('/cast', [castcontroller::class, 'store']);
+     Route::get('/cast/{cast_id}', [castcontroller::class, 'show']);
+     Route::get('/cast/{cast_id}/edit', [castontroller::class, 'edit']);
+     Route::put('/cast/{cast_id}', [castcontroller::class, 'update']);
+     Route::delete('/cast/{cast_id}', [castcontroller::class,'destroy']);
